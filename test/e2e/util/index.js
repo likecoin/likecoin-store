@@ -15,7 +15,7 @@ function initBrowser(browser) {
 
 function jwtSign(user, wallet) {
   return jwt.sign({
-    permissions: ['read', 'write', 'like'],
+    permissions: ['read', 'write'],
     user,
     wallet,
   }, 'likecoin', {
