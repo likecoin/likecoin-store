@@ -63,13 +63,14 @@ jobs:
       - run:
           name: Node Environment
           command: |
-            sudo apt-get -y install curl make g++ net-tools
+            sudo apt-get -y install curl make g++ net-tools python rsync
             sudo curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
             sudo apt-get -y install nodejs
       - run:
           name: Pin npm version
           command: |
             sudo npm install -g npm@6.9.0
+            sudo mkdir -p ~/.npm
             sudo chown -R $(whoami) ~/.npm
       - run:
           name: Dependencies
